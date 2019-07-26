@@ -1,0 +1,82 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+    <div class="container-fluid">
+        <h3>Data Speedtest</h3>
+        <table class="highlight">
+            <tr>
+                <th><center>ID</center></th>
+                <th><center>Server ID</center></th>
+                <th><center>Sponsor</center></th>
+                <th><center>Server Name</center></th>
+                <th><center>Distance</center></th>
+                <th><center>Ping</center></th>
+                <th><center>Download (MB)</center></th>
+                <th><center>Upload (MB)</center></th>
+                <th><center>IP PC</center></th>
+                <th><center>Timestamp</center></th>
+            </tr>
+            {% for item in DataSpeedtest %}
+            <tr> 
+                <td><center>{{item.id_st}}</center></td>
+                <td><center>{{item.serverid}}</center></td>
+                <td><center>{{item.sponsor}}</center></td>
+                <td><center>{{item.servername}}</center></td>
+                <td><center>{{item.distance}}</center></td>
+                <td><center>{{item.ping}}</center></td>
+                <td><center>{{item.download}}</center></td>
+                <td><center>{{item.upload}}</center></td>
+                <td><center>{{item.ip}}</center></td>
+                <td><center>{{item.timestamp}}</center></td>   
+                <td><button class="btn">Detail</button></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <h3>Data Ping Statistics</h3>
+        <table class="highlight">
+            <tr>
+                <th><center>ID</center></th>
+                <th><center>IP Tujuan</center></th>
+                <th><center>Packet Send</center></th>
+                <th><center>Packet Received</center></th>
+                <th><center>Packet Loss</center></th>
+                <th><center>Packet Minimum</center></th>
+                <th><center>Packet Maximum</center></th>
+                <th><center>Packet Average</center></th>
+            </tr>
+            {% for item in DataPingstatistics %}
+            <tr> 
+                <td><center>{{item.id_ps}}</center></td>
+                <td><center>{{item.ip}}</center></td>
+                <td><center>{{item.packetsend}}</center></td>
+                <td><center>{{item.packetreceived}}</center></td>
+                <td><center>{{item.packetloss}}</center></td>
+                <td><center>{{item.packetminimum}}</center></td>
+                <td><center>{{item.packetmaximum}}</center></td>
+                <td><center>{{item.packetaverage}}</center></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <h3>Data Ping</h3>
+        <table class="highlight">
+            <tr>
+                <th><center>ID</center></th>
+                <th><center>IP Tujuan</center></th>
+                <th><center>Bytes</center></th>
+                <th><center>Time</center></th>
+                <th><center>TTL</center></th>
+            </tr>
+            {% for item in DataPing %}
+            <tr> 
+                <td><center>{{item.id_p}}</center></td>
+                <td><center>{{item.ip}}</center></td>
+                <td><center>{{item.bytes}}</center></td>
+                <td><center>{{item.time}}</center></td>
+                <td><center>{{item.ttl}}</center></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
